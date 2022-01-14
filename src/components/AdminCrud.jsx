@@ -61,7 +61,9 @@ const AdminCrud = () => {
     evt.preventDefault();
     setShowUpdateEvent(true);
     const options = facade.makeOptions("PUT", true, updateData);
-    fetch(Update_Dining_Event, options).then((res) => handleHttpErrors(res));
+    fetch(Update_Dining_Event + "/" + updateData.idtochange, options).then(
+      (res) => handleHttpErrors(res)
+    );
     setDataReady(false);
   };
 
@@ -76,7 +78,6 @@ const AdminCrud = () => {
     const options = facade.makeOptions("DELETE", true, deleteobj);
     fetch(Remove_Dining_Event, options).then((res) => handleHttpErrors(res));
     setDataReady(false);
-    console.log(deleteData.eventID);
   };
 
   function getdata() {
@@ -190,6 +191,10 @@ const AdminCrud = () => {
             </Modal.Header>
             <Modal.Body>
               <Form onSubmit={handleUpdate} onChange={handleonChangeU}>
+                <Form.Group className="mb-3" controlId="idtochange">
+                  <Form.Label>#ID To change</Form.Label>
+                  <Form.Control type="number" />
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="eventname">
                   <Form.Label>Dinner Event Name</Form.Label>
                   <Form.Control type="text" />

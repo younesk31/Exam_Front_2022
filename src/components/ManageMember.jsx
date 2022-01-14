@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import facade from "../apiFacade";
 import { Remove_Memeber_From_Event, Dining_Events } from "./Urls";
-import {
-  Table,
-  Container,
-  ButtonGroup,
-  Button,
-  Form,
-  Modal,
-} from "react-bootstrap";
+import { Table, Container, Button, Form, Modal } from "react-bootstrap";
 
 function handleHttpErrors(res) {
   if (!res.ok) {
@@ -21,7 +14,6 @@ const ManageMember = () => {
   const [item, setItem] = useState([]);
   const [dataReady, setDataReady] = useState(false);
   const [error, setError] = useState(null);
-  const [currentuser, setCurrentUser] = useState(null);
 
   const [showDeleteEvent, setShowDeleteEvent] = useState(false);
   const [deleteData, setDeleteData] = useState(null);

@@ -1,6 +1,6 @@
-//const Server_URL = "https://shitlord.me/CA3";
+const Server_URL = "https://shitlord.me/Exam_Project";
 
-const Server_URL = "http://localhost:8080/Exam_Project";
+//const Server_URL = "http://localhost:8080/Exam_Project";
 
 const Dining_Events = Server_URL + "/api/dining/diningevents";
 const Transactions = Server_URL + "/api/dining/transactions";
